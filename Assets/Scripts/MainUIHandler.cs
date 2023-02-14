@@ -12,10 +12,4 @@ public class MainUIHandler : MonoBehaviour
     {
         bestScoreText.text = "Best Score : " + PlayerData.Instance.bestScoreName + " : " + PlayerData.Instance.bestScore; 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

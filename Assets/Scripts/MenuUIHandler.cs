@@ -11,6 +11,13 @@ using UnityEditor;
 public class MenuUIHandler : MonoBehaviour
 {
     [SerializeField] TMP_InputField playerNameInput;
+    [SerializeField] TextMeshProUGUI bestScoreText;
+
+    private void Start()
+    {
+        bestScoreText.SetText("Best Score: " + PlayerData.Instance.bestScoreName + " : " + PlayerData.Instance.bestScore);
+        playerNameInput.text = PlayerData.Instance.playerName;
+    }
 
     public void StartGame()
     {
@@ -20,7 +27,7 @@ public class MenuUIHandler : MonoBehaviour
 
     public void QuitGameClicked()
     {
-        PlayerData.Instance.SavePlayerData();
+        PlayerData.Instance.SaveBestScore();
 
         #if UNITY_EDITOR
             EditorApplication.ExitPlaymode();

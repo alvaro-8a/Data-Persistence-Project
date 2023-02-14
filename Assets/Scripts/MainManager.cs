@@ -76,6 +76,8 @@ public class MainManager : MonoBehaviour
             PlayerData.Instance.bestScore = m_Points;
         }
 
+        PlayerData.Instance.SaveBestScore();
+
         m_GameOver = true;
         GameOverText.SetActive(true);
     }
