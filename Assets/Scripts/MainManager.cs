@@ -70,6 +70,12 @@ public class MainManager : MonoBehaviour
 
     public void GameOver()
     {
+        if (m_Points > PlayerData.Instance.bestScore)
+        {
+            PlayerData.Instance.bestScoreName = PlayerData.Instance.playerName;
+            PlayerData.Instance.bestScore = m_Points;
+        }
+
         m_GameOver = true;
         GameOverText.SetActive(true);
     }
